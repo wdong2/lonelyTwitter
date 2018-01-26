@@ -64,9 +64,14 @@ public class LonelyTwitterActivity extends Activity {
 		clearButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
-				
+				setResult(RESULT_OK);
+
+				tweetList.clear();
+				adapter.notifyDataSetChanged();
+
+				saveInFile();
 			}
-		})
+		});
 	}
 
 	@Override
